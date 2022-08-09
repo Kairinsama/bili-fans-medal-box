@@ -11,7 +11,7 @@ def get_medal_list():
         params = (('target_id', target_id),)
         response = requests.get(api, headers=headers, params=params)
         print(response.json())
-        medal_list = response.json()['data']['list'][:5]
+        medal_list = response.json()['data']['list'][:6]
         return medal_list
     except Exception as e:
         raise Exception("get_medal_list error: {}".format(e))
