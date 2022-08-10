@@ -10,7 +10,6 @@ def get_medal_list():
         target_id = re.search(r'DedeUserID=(\d+)', cookie).group(1)
         params = (('target_id', target_id),)
         response = requests.get(api, headers=headers, params=params)
-        print(response.json())
         medal_list = response.json()['data']['list'][:6]
         return medal_list
     except Exception as e:
